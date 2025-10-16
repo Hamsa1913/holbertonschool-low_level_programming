@@ -5,15 +5,14 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char c;
+	int number;
 
-	for (c = 'a'; c <= 'z'; c++)
-		putchar(c);
-	for (c = 'A'; c <= 'Z'; c++)
-		putchar(c);
-	putchar('\n');
+	for (number = 0; number < 10; number++)
+	{
+		printf("%d", number);
+	}
+	printf("\n");
 	return (0);
 }
