@@ -1,19 +1,21 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_alphabet - Print alphabet
+ * main - prints _putchar, followed by a new line
  *
- * My function
- *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
-
-void print_alphabet(void)
+int main(void)
 {
-	int a;
-
-	for (a = 0; a < 26; a++)
-		_putchar(97 + a);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
 	_putchar('\n');
+
+	return (0);
 }
