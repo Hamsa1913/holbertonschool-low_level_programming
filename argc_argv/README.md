@@ -1,1 +1,1 @@
-argc_argv project – Task 2: print all arguments
+argc_argv project – Task 3: multiply two numbers
