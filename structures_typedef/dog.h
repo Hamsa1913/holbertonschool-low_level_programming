@@ -2,12 +2,10 @@
 #define DOG_H
 
 /**
- * struct dog - structure that stores dog info
+ * struct dog - structure for dog info
  * @name: name of the dog
  * @age: age of the dog
  * @owner: owner of the dog
- *
- * Description: Simple struct for practicing structures in C.
  */
 struct dog
 {
@@ -16,4 +14,7 @@ struct dog
 	char *owner;
 };
 
-#endif /* DOG_H */
+/* Function prototypes */
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
+#endif
