@@ -3,9 +3,11 @@
 
 /**
  * struct dog - structure for dog info
- * @name: dog's name (string)
- * @age: dog's age (float)
- * @owner: dog's owner (string)
+ * @name: pointer to dog's name
+ * @age: dog's age
+ * @owner: pointer to owner's name
+ *
+ * Description: structure that stores info about a dog
  */
 struct dog
 {
