@@ -2,18 +2,16 @@
 #define DOG_H
 
 /**
- * struct dog - structure for dog info
- * @name: pointer to dog's name
- * @age: dog's age
- * @owner: pointer to owner's name
- *
- * Description: structure that stores info about a dog
+ * struct dog - structure that stores dog info
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  */
 struct dog
 {
-	char *name;
-	float age;
-	char *owner;
+    char *name;
+    float age;
+    char *owner;
 };
 
-#endif /* DOG_H */
+#endif
