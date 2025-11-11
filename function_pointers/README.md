@@ -1,2 +1,1 @@
-C - Function pointers
-Task 0: print_name
+Function pointers project - Task 0: print_name
