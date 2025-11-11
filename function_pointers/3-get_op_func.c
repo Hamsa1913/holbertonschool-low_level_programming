@@ -4,7 +4,7 @@
 /**
  * get_op_func - returns pointer to the right function
  * @s: operator string
- * Return: function pointer, or NULL if no match
+ * Return: function pointer or NULL if no match
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -14,8 +14,11 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	while (ops[i].op && *(ops[i].op) != *s)
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
 		i++;
+
+	if (ops[i].op == NULL)
+		return (NULL);
 
 	return (ops[i].f);
 }
