@@ -1,38 +1,38 @@
-#include "hash_tables.h"
+#ifndef HASH_TABLES_H
+#define HASH_TABLES_H
+
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
- * hash_table_create - Creates a hash table
- * @size: Size of the array
- *
- * Return: Pointer to the newly created hash table, or NULL on failure
+ * struct hash_node_s - Node of a hash table
+ * @key: The key, string (unique)
+ * @value: The value corresponding to a key
+ * @next: A pointer to the next node of the List
  */
-hash_table_t *hash_table_create(unsigned long int size)
+typedef struct hash_node_s
 {
-	hash_table_t *ht;
-	unsigned long int i;
+	char *key;
+	char *value;
+	struct hash_node_s *next;
+} hash_node_t;
 
-	if (size == 0)
-		return (NULL);
+/**
+ * struct hash_table_s - Hash table data structure
+ * @size: The size of the array
+ * @array: An array of size @size
+ *
+ * Each cell of this array is a pointer to the first node of a linked list,
+ * because we want our HashTable to use a Chaining collision handling.
+ */
+typedef struct hash_table_s
+{
+	unsigned long int size;
+	hash_node_t **array;
+} hash_table_t;
 
-	/* Allocate memory for the hash table structure */
-	ht = malloc(sizeof(hash_table_t));
-	if (ht == NULL)
-		return (NULL);
+hash_table_t *hash_table_create(unsigned long int size);
 
-	/* Allocate memory for the array of pointers */
-	ht->array = malloc(sizeof(hash_node_t *) * size);
-	if (ht->array == NULL)
-	{
-		free(ht);
-		return (NULL);
-	}
+#endif /* HASH_TABLES_H */
 
-	/* Initialize all pointers in the array to NULL */
-	for (i = 0; i < size; i++)
-		ht->array[i] = NULL;
-
-	ht->size = size;
-
-	return (ht);
-}
