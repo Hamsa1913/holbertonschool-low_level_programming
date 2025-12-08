@@ -9,7 +9,7 @@
  * struct hash_node_s - Node of a hash table
  * @key: The key, string (unique)
  * @value: The value corresponding to a key
- * @next: A pointer to the next node of the List
+ * @next: A pointer to the next node of the list
  */
 typedef struct hash_node_s
 {
@@ -24,7 +24,7 @@ typedef struct hash_node_s
  * @array: An array of size @size
  *
  * Each cell of this array is a pointer to the first node of a linked list,
- * which is used to handle collisions (Chaining).
+ * which is used to handle collisions (chaining).
  */
 typedef struct hash_table_s
 {
@@ -32,14 +32,17 @@ typedef struct hash_table_s
 	hash_node_t **array;
 } hash_table_t;
 
-/* Task 0 */
+/* Task 0 - create hash table */
 hash_table_t *hash_table_create(unsigned long int size);
 
-/* Task 1 - djb2 */
+/* Task 1 - djb2 hash function */
 unsigned long int hash_djb2(const unsigned char *str);
 
-/* Task 2 - key_index */
+/* Task 2 - key -> index */
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
+
+/* Task 3 - set key/value in hash table */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
 #endif /* HASH_TABLES_H */
 
